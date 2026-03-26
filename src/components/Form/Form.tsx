@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './Form.scss';
 
-export const Form = (props: { createNewTodo: Function }) => {
+export const Form = ({ createNewTodo }: { createNewTodo: Function }) => {
     const [text, setText] = useState<string>('');
 
     const formSubmit = () => {
         if (text) {
-            props.createNewTodo(text);
+            createNewTodo(text);
             setText('');
         }
     };
